@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import json
+import urllib
 
 # JSON 파일에서 API 키 불러오기
 def load_api_keys(file_path):
@@ -37,3 +38,23 @@ def process_address(df, client_id, client_secret):
     'Address' column에 대하여 get_coordinates를 진행하여 새로운 column을 생성
     """
     df[['latitude', 'longitude']] = df.apply(lambda row: get_coordinates(row['Address'], client_id, client_secret), axis=1).apply(pd.Series)
+
+def get_optimal_route(start, goal, client_id, client_secret, option) :
+    """
+    네이버 길찾기 api 활용, json 불러오기
+    """
+    # start=/goal=/(waypoint=)/(option=) 순으로 request parameter 지정
+    url = f"https://naveropenapi.apigw.ntruss.com/map-direction/v1/driving?start={start[0]},{start[1]}&goal={goal[0]},{goal[1]}&option={option}"
+    request = urllib.request.Request(url)
+    request.add_header('X-NCP-APIGW-API-KEY-ID', client_id)
+    request.add_header('X-NCP-APIGW-API-KEY', client_secret)
+    
+    response = urllib.request.urlopen(request)
+    res = response.getcode()
+    
+    if (res == 200) :
+        response_body = response.read().decode('utf-8')
+        return json.loads(response_body)
+            
+    else :
+        print('ERROR')
