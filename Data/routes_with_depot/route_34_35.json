@@ -1,0 +1,517 @@
+{
+    "code": 0,
+    "message": "\uae38\ucc3e\uae30\ub97c \uc131\uacf5\ud558\uc600\uc2b5\ub2c8\ub2e4.",
+    "currentDateTime": "2024-05-19T20:56:21",
+    "route": {
+        "traoptimal": [
+            {
+                "summary": {
+                    "start": {
+                        "location": [
+                            127.134666,
+                            35.276205
+                        ]
+                    },
+                    "goal": {
+                        "location": [
+                            127.1356248,
+                            35.2737498
+                        ],
+                        "dir": 2
+                    },
+                    "distance": 390,
+                    "duration": 63443,
+                    "etaServiceType": 0,
+                    "departureTime": "2024-05-19T20:56:21",
+                    "bbox": [
+                        [
+                            127.1337991,
+                            35.2737099
+                        ],
+                        [
+                            127.1356248,
+                            35.276205
+                        ]
+                    ],
+                    "tollFare": 0,
+                    "taxiFare": 5000,
+                    "fuelPrice": 47
+                },
+                "path": [
+                    [
+                        127.1344803,
+                        35.2761729
+                    ],
+                    [
+                        127.1344993,
+                        35.2760999
+                    ],
+                    [
+                        127.1345772,
+                        35.2758963
+                    ],
+                    [
+                        127.1346149,
+                        35.2758288
+                    ],
+                    [
+                        127.134637,
+                        35.275791
+                    ],
+                    [
+                        127.1343375,
+                        35.2756494
+                    ],
+                    [
+                        127.1339285,
+                        35.2753903
+                    ],
+                    [
+                        127.1337991,
+                        35.2753079
+                    ],
+                    [
+                        127.1339251,
+                        35.2751721
+                    ],
+                    [
+                        127.1342577,
+                        35.2748097
+                    ],
+                    [
+                        127.1342864,
+                        35.2747773
+                    ],
+                    [
+                        127.1342886,
+                        35.2747755
+                    ],
+                    [
+                        127.1343384,
+                        35.2747189
+                    ],
+                    [
+                        127.1343727,
+                        35.2746766
+                    ],
+                    [
+                        127.1345118,
+                        35.2745328
+                    ],
+                    [
+                        127.1345771,
+                        35.2744572
+                    ],
+                    [
+                        127.1347738,
+                        35.2742315
+                    ],
+                    [
+                        127.1352269,
+                        35.2737099
+                    ],
+                    [
+                        127.1355088,
+                        35.2738793
+                    ]
+                ],
+                "section": [
+                    {
+                        "pointIndex": 0,
+                        "pointCount": 5,
+                        "distance": 45,
+                        "name": "\uc625\uacfc2\uae38",
+                        "congestion": 0,
+                        "speed": 15
+                    },
+                    {
+                        "pointIndex": 4,
+                        "pointCount": 4,
+                        "distance": 93,
+                        "name": "\ub300\ud559\ub85c",
+                        "congestion": 0,
+                        "speed": 23
+                    },
+                    {
+                        "pointIndex": 7,
+                        "pointCount": 11,
+                        "distance": 220,
+                        "name": "\ub9ac\ubb383\uae38",
+                        "congestion": 0,
+                        "speed": 24
+                    }
+                ],
+                "guide": [
+                    {
+                        "pointIndex": 4,
+                        "type": 3,
+                        "instructions": "'\ub300\ud559\ub85c' \ubc29\uba74\uc73c\ub85c \uc6b0\ud68c\uc804",
+                        "distance": 45,
+                        "duration": 10318
+                    },
+                    {
+                        "pointIndex": 7,
+                        "type": 2,
+                        "instructions": "'\ub9ac\ubb383\uae38' \ubc29\uba74\uc73c\ub85c \uc88c\ud68c\uc804",
+                        "distance": 93,
+                        "duration": 14556
+                    },
+                    {
+                        "pointIndex": 17,
+                        "type": 2,
+                        "instructions": "\uc88c\ud68c\uc804",
+                        "distance": 220,
+                        "duration": 32169
+                    },
+                    {
+                        "pointIndex": 18,
+                        "type": 88,
+                        "instructions": "\ubaa9\uc801\uc9c0",
+                        "distance": 32,
+                        "duration": 6400
+                    }
+                ]
+            }
+        ],
+        "trafast": [
+            {
+                "summary": {
+                    "start": {
+                        "location": [
+                            127.134666,
+                            35.276205
+                        ]
+                    },
+                    "goal": {
+                        "location": [
+                            127.1356248,
+                            35.2737498
+                        ],
+                        "dir": 2
+                    },
+                    "distance": 390,
+                    "duration": 63443,
+                    "etaServiceType": 0,
+                    "departureTime": "2024-05-19T20:56:21",
+                    "bbox": [
+                        [
+                            127.1337991,
+                            35.2737099
+                        ],
+                        [
+                            127.1356248,
+                            35.276205
+                        ]
+                    ],
+                    "tollFare": 0,
+                    "taxiFare": 5000,
+                    "fuelPrice": 47
+                },
+                "path": [
+                    [
+                        127.1344803,
+                        35.2761729
+                    ],
+                    [
+                        127.1344993,
+                        35.2760999
+                    ],
+                    [
+                        127.1345772,
+                        35.2758963
+                    ],
+                    [
+                        127.1346149,
+                        35.2758288
+                    ],
+                    [
+                        127.134637,
+                        35.275791
+                    ],
+                    [
+                        127.1343375,
+                        35.2756494
+                    ],
+                    [
+                        127.1339285,
+                        35.2753903
+                    ],
+                    [
+                        127.1337991,
+                        35.2753079
+                    ],
+                    [
+                        127.1339251,
+                        35.2751721
+                    ],
+                    [
+                        127.1342577,
+                        35.2748097
+                    ],
+                    [
+                        127.1342864,
+                        35.2747773
+                    ],
+                    [
+                        127.1342886,
+                        35.2747755
+                    ],
+                    [
+                        127.1343384,
+                        35.2747189
+                    ],
+                    [
+                        127.1343727,
+                        35.2746766
+                    ],
+                    [
+                        127.1345118,
+                        35.2745328
+                    ],
+                    [
+                        127.1345771,
+                        35.2744572
+                    ],
+                    [
+                        127.1347738,
+                        35.2742315
+                    ],
+                    [
+                        127.1352269,
+                        35.2737099
+                    ],
+                    [
+                        127.1355088,
+                        35.2738793
+                    ]
+                ],
+                "section": [
+                    {
+                        "pointIndex": 0,
+                        "pointCount": 5,
+                        "distance": 45,
+                        "name": "\uc625\uacfc2\uae38",
+                        "congestion": 0,
+                        "speed": 15
+                    },
+                    {
+                        "pointIndex": 4,
+                        "pointCount": 4,
+                        "distance": 93,
+                        "name": "\ub300\ud559\ub85c",
+                        "congestion": 0,
+                        "speed": 23
+                    },
+                    {
+                        "pointIndex": 7,
+                        "pointCount": 11,
+                        "distance": 220,
+                        "name": "\ub9ac\ubb383\uae38",
+                        "congestion": 0,
+                        "speed": 24
+                    }
+                ],
+                "guide": [
+                    {
+                        "pointIndex": 4,
+                        "type": 3,
+                        "instructions": "'\ub300\ud559\ub85c' \ubc29\uba74\uc73c\ub85c \uc6b0\ud68c\uc804",
+                        "distance": 45,
+                        "duration": 10318
+                    },
+                    {
+                        "pointIndex": 7,
+                        "type": 2,
+                        "instructions": "'\ub9ac\ubb383\uae38' \ubc29\uba74\uc73c\ub85c \uc88c\ud68c\uc804",
+                        "distance": 93,
+                        "duration": 14556
+                    },
+                    {
+                        "pointIndex": 17,
+                        "type": 2,
+                        "instructions": "\uc88c\ud68c\uc804",
+                        "distance": 220,
+                        "duration": 32169
+                    },
+                    {
+                        "pointIndex": 18,
+                        "type": 88,
+                        "instructions": "\ubaa9\uc801\uc9c0",
+                        "distance": 32,
+                        "duration": 6400
+                    }
+                ]
+            }
+        ],
+        "traavoidtoll": [
+            {
+                "summary": {
+                    "start": {
+                        "location": [
+                            127.134666,
+                            35.276205
+                        ]
+                    },
+                    "goal": {
+                        "location": [
+                            127.1356248,
+                            35.2737498
+                        ],
+                        "dir": 2
+                    },
+                    "distance": 390,
+                    "duration": 63443,
+                    "etaServiceType": 0,
+                    "departureTime": "2024-05-19T20:56:21",
+                    "bbox": [
+                        [
+                            127.1337991,
+                            35.2737099
+                        ],
+                        [
+                            127.1356248,
+                            35.276205
+                        ]
+                    ],
+                    "tollFare": 0,
+                    "taxiFare": 5000,
+                    "fuelPrice": 47
+                },
+                "path": [
+                    [
+                        127.1344803,
+                        35.2761729
+                    ],
+                    [
+                        127.1344993,
+                        35.2760999
+                    ],
+                    [
+                        127.1345772,
+                        35.2758963
+                    ],
+                    [
+                        127.1346149,
+                        35.2758288
+                    ],
+                    [
+                        127.134637,
+                        35.275791
+                    ],
+                    [
+                        127.1343375,
+                        35.2756494
+                    ],
+                    [
+                        127.1339285,
+                        35.2753903
+                    ],
+                    [
+                        127.1337991,
+                        35.2753079
+                    ],
+                    [
+                        127.1339251,
+                        35.2751721
+                    ],
+                    [
+                        127.1342577,
+                        35.2748097
+                    ],
+                    [
+                        127.1342864,
+                        35.2747773
+                    ],
+                    [
+                        127.1342886,
+                        35.2747755
+                    ],
+                    [
+                        127.1343384,
+                        35.2747189
+                    ],
+                    [
+                        127.1343727,
+                        35.2746766
+                    ],
+                    [
+                        127.1345118,
+                        35.2745328
+                    ],
+                    [
+                        127.1345771,
+                        35.2744572
+                    ],
+                    [
+                        127.1347738,
+                        35.2742315
+                    ],
+                    [
+                        127.1352269,
+                        35.2737099
+                    ],
+                    [
+                        127.1355088,
+                        35.2738793
+                    ]
+                ],
+                "section": [
+                    {
+                        "pointIndex": 0,
+                        "pointCount": 5,
+                        "distance": 45,
+                        "name": "\uc625\uacfc2\uae38",
+                        "congestion": 0,
+                        "speed": 15
+                    },
+                    {
+                        "pointIndex": 4,
+                        "pointCount": 4,
+                        "distance": 93,
+                        "name": "\ub300\ud559\ub85c",
+                        "congestion": 0,
+                        "speed": 23
+                    },
+                    {
+                        "pointIndex": 7,
+                        "pointCount": 11,
+                        "distance": 220,
+                        "name": "\ub9ac\ubb383\uae38",
+                        "congestion": 0,
+                        "speed": 24
+                    }
+                ],
+                "guide": [
+                    {
+                        "pointIndex": 4,
+                        "type": 3,
+                        "instructions": "'\ub300\ud559\ub85c' \ubc29\uba74\uc73c\ub85c \uc6b0\ud68c\uc804",
+                        "distance": 45,
+                        "duration": 10318
+                    },
+                    {
+                        "pointIndex": 7,
+                        "type": 2,
+                        "instructions": "'\ub9ac\ubb383\uae38' \ubc29\uba74\uc73c\ub85c \uc88c\ud68c\uc804",
+                        "distance": 93,
+                        "duration": 14556
+                    },
+                    {
+                        "pointIndex": 17,
+                        "type": 2,
+                        "instructions": "\uc88c\ud68c\uc804",
+                        "distance": 220,
+                        "duration": 32169
+                    },
+                    {
+                        "pointIndex": 18,
+                        "type": 88,
+                        "instructions": "\ubaa9\uc801\uc9c0",
+                        "distance": 32,
+                        "duration": 6400
+                    }
+                ]
+            }
+        ]
+    }
+}
