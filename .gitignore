@@ -1,2 +1,3 @@
 *.pyc
-Notebooks/
+config.json
+Data/routes_with_depot
