@@ -40,6 +40,7 @@ class SavingsModel:
         self.routes = [] # 초기화
         self.demand = 0
         self.cost = 0
+        self.time = 0
         # savings가 계산이 안 된 경우
         if self.savings == None:
             raise ValueError("Savings uncalculated. Calculate savings first by 'self.calculate_savings()'.")
@@ -51,6 +52,7 @@ class SavingsModel:
         for r in self.routes:
             self.demand += r.demand
             self.cost += r.cost
+            self.time += r.time
     
     def print_routes(self):
         for r in self.routes:

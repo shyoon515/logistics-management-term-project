@@ -13,6 +13,7 @@ class Route:
         self.links = []
         self.demand = 0
         self.cost = 0
+        self.time = 0
         for n in nodes:
             if isinstance(n, int):
                 n = graph.get_node(n)
@@ -23,6 +24,7 @@ class Route:
                 l = self.graph.get_link(self.nodes[idx], self.nodes[idx+1])
                 self.links.append(l)
                 self.cost += l.cost
+                self.time += l.time
     
     def visualize(self, ax, json_path, route_option='trafast', update_sec = 1, color='black'):
         for link in self.links:
@@ -59,5 +61,10 @@ class Route:
             else:
                 txt = txt + f' {self.nodes[idx].index} -'
         
-        txt = txt + f'Demand met : {self.demand}, Cost : {self.cost}'
+        seconds = self.time//1000
+        minutes = seconds//60
+        hours = minutes//60
+        remaining_minutes = minutes % 60
+
+        txt = txt + f'Demand met : {self.demand}, Cost : {self.cost}, Time {hours}H {remaining_minutes}M'
         return txt
