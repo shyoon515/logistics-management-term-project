@@ -32,7 +32,7 @@ class SavingsModel:
         self.savings = result
         
 
-    def apply_algorithm(self, capa, algorithm, verbose=True):
+    def apply_algorithm(self, capa, algorithm, verbose=True, stochastic_drop=0.0):
         """
         self.routes에 알고리즘을 통해 구해진 route 해를 저장
         """
@@ -44,7 +44,7 @@ class SavingsModel:
         if self.savings == None:
             raise ValueError("Savings uncalculated. Calculate savings first by 'self.calculate_savings()'.")
         
-        all_routes = algorithm(self.savings, self.graph.nodes, capa, self.depot, verbose=verbose)
+        all_routes = algorithm(self.savings, self.graph.nodes, capa, self.depot, verbose=verbose, stochastic_drop=stochastic_drop)
         for r in all_routes:
             self.routes.append(Route(self.graph, r))
         
