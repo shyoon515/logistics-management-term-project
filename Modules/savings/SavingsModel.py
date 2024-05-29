@@ -1,5 +1,4 @@
 from itertools import combinations
-from tqdm import tqdm
 from .route import Route
 from .SavingsAlgorithm import Clarke_Wright_Savings
 
@@ -11,7 +10,7 @@ class SavingsModel:
         self.routes = []
         self.demand = 0
         self.cost = 0
-        print('SavingsModel initialized')
+        #print('SavingsModel initialized')
     
     def calculate_savings(self):
         """
@@ -22,8 +21,8 @@ class SavingsModel:
         # depot node가 아닌 node들의 combination 조합에서 savings들을 계산
         non_depot_nodes = [n for n in self.graph.nodes if n != self.depot]
         node_combs = [comb for comb in combinations(non_depot_nodes, 2)]
-        print(f"Calculating savings for {len(self.graph.nodes)-1} nodes, \n[Depot node] {self.depot}")
-        for n1, n2  in tqdm(node_combs):
+        #print(f"Calculating savings for {len(self.graph.nodes)-1} nodes, \n[Depot node] {self.depot}")
+        for n1, n2  in node_combs:
             savings[(n1.index, n2.index)] = self.graph.get_link(self.depot, n1).cost + self.graph.get_link(self.depot, n2).cost - self.graph.get_link(n1, n2).cost
         
         # 정렬 후 savings에 저장
@@ -33,7 +32,7 @@ class SavingsModel:
         self.savings = result
         
 
-    def apply_algorithm(self, capa, algorithm):
+    def apply_algorithm(self, capa, algorithm, verbose=True):
         """
         self.routes에 알고리즘을 통해 구해진 route 해를 저장
         """
@@ -45,7 +44,7 @@ class SavingsModel:
         if self.savings == None:
             raise ValueError("Savings uncalculated. Calculate savings first by 'self.calculate_savings()'.")
         
-        all_routes = algorithm(self.savings, self.graph.nodes, capa, self.depot)
+        all_routes = algorithm(self.savings, self.graph.nodes, capa, self.depot, verbose=verbose)
         for r in all_routes:
             self.routes.append(Route(self.graph, r))
         
@@ -57,3 +56,12 @@ class SavingsModel:
     def print_routes(self):
         for r in self.routes:
             print(r)
+    
+    def yearly_cost(self, yearly_days=365, fixed=0, verbose=False):
+        fixed = int(fixed)
+        total_cost = self.cost*yearly_days + len(self.routes)*fixed
+        if verbose==False:
+            print(f"연간 운송비: {self.cost*yearly_days:,}원")
+            print(f"연간 인건비: {len(self.routes)*fixed:,}원")
+            print(f"연간 총 비용: {total_cost:,}원")
+        return total_cost

@@ -1,13 +1,12 @@
-from tqdm import tqdm
-
-def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node):
+def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, verbose=True):
     """
     saving_dict: 정렬된 saving의 dictionary 객체
     demand_list: 각 node들의 demand list를 나열 -> depot을 제외한 demand list 만들기
     capa: 트럭의 capacity
     depot_node.index: depot의 index -> 오로지 마지막에 depot index를 붙여줄 때에만 쓰임
     """
-    print("Iterating through the savings info ...")
+    if verbose==False:
+        print("Iterating through the savings info ...")
 
     # demand_list 만들기
     demand_list = []
@@ -19,7 +18,7 @@ def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node):
 
     route_list = []
     node_state_list = [[0, 0, 0] for i in range(len(demand_list))]
-    for link in tqdm(saving_dict):
+    for link in saving_dict:
 
         # 각 node의 idx
         i_idx = link[0]
