@@ -1,4 +1,6 @@
-def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, verbose=True):
+import numpy as np
+
+def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, verbose=True, stochastic_drop=0.0):
     """
     saving_dict: 정렬된 saving의 dictionary 객체
     demand_list: 각 node들의 demand list를 나열 -> depot을 제외한 demand list 만들기
@@ -19,6 +21,8 @@ def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, verbose=True
     route_list = []
     node_state_list = [[0, 0, 0] for i in range(len(demand_list))]
     for link in saving_dict:
+        if np.random.binomial(n=1, p=stochastic_drop, size=1)[0] == 1:
+            continue
 
         # 각 node의 idx
         i_idx = link[0]
