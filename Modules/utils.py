@@ -1,8 +1,8 @@
 import json
 
-def get_cost(index1, index2, cost_type, json_path, toll_include=True):
+def get_cost_time(index1, index2, route_type, json_path, toll_include=True):
     """
-    index1, index2와 cost_type을 지정해주면 json 파일을 파싱하여 비용을 반환
+    index1, index2와 route_type을 지정해주면 json 파일을 파싱하여 비용을 반환
     """
     # 출발지와 도착지가 같은 경우 0 반환
     if index1 == index2:
@@ -24,9 +24,10 @@ def get_cost(index1, index2, cost_type, json_path, toll_include=True):
             raise ValueError()
         
         try:
-            tollFare = 0 if toll_include else data['route'][cost_type][0]['summary']['tollFare']
-            feulPrice = data['route'][cost_type][0]['summary']['fuelPrice']
-            return tollFare+feulPrice
+            tollFare = 0 if toll_include else data['route'][route_type][0]['summary']['tollFare']
+            feulPrice = data['route'][route_type][0]['summary']['fuelPrice']
+            time = data['route'][route_type][0]['summary']['duration']
+            return tollFare+feulPrice, time
         except:
             print(f"{json_path} 파일의 tollFare와 fuelPrice 파싱 불가")
             raise ValueError()
