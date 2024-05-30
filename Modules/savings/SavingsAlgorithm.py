@@ -48,7 +48,7 @@ def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, time_constra
             demand = i_demand + j_demand
             if (demand <= capa):
               # time <= time_constraint 확인
-              time = n2n_time[0][i_idx] + n2n_time[i_idx][j_idx] + n2n_time[j_idx][0] + service_time[i_idx] + service_time[j_idx]
+              time = n2n_time[0][i_idx] + n2n_time[i_idx][j_idx] + n2n_time[j_idx][0] + service_time[i_idx-1] + service_time[j_idx-1]
               if (time <= time_constraint):
                 route_list.append([i_idx, j_idx])
 
@@ -117,9 +117,9 @@ def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, time_constra
                             for i in range(len(merge_route)-1):
                               # merge_route의 i번째 node -> i+1번째 node 이동 시간
                               time += n2n_time[merge_route[i]][merge_route[i+1]]
-                              # depot -> 0번째 노드 + 마지막 노드 -> depot 시간 합하기
-                              time += n2n_time[0][merge_route[0]]
-                              time += n2n_time[merge_route[-1]][0]
+                            # depot -> 0번째 노드 + 마지막 노드 -> depot 시간 합하기
+                            time += n2n_time[0][merge_route[0]]
+                            time += n2n_time[merge_route[-1]][0]
 
                             # time constraint 만족하는지 확인
                             if (time <= time_constraint):
@@ -146,9 +146,9 @@ def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, time_constra
                             for i in range(len(merge_route)-1):
                               # merge_route의 i번째 node -> i+1번째 node 이동 시간
                               time += n2n_time[merge_route[i]][merge_route[i+1]]
-                              # depot -> 0번째 노드 + 마지막 노드 -> depot 시간 합하기
-                              time += n2n_time[0][merge_route[0]]
-                              time += n2n_time[merge_route[-1]][0]
+                            # depot -> 0번째 노드 + 마지막 노드 -> depot 시간 합하기
+                            time += n2n_time[0][merge_route[0]]
+                            time += n2n_time[merge_route[-1]][0]
 
                             # time constraint 만족하는지 확인
                             if (time <= time_constraint):
@@ -176,9 +176,9 @@ def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, time_constra
                             for i in range(len(merge_route)-1):
                               # merge_route의 i번째 node -> i+1번째 node 이동 시간
                               time += n2n_time[merge_route[i]][merge_route[i+1]]
-                              # depot -> 0번째 노드 + 마지막 노드 -> depot 시간 합하기
-                              time += n2n_time[0][merge_route[0]]
-                              time += n2n_time[merge_route[-1]][0]
+                            # depot -> 0번째 노드 + 마지막 노드 -> depot 시간 합하기
+                            time += n2n_time[0][merge_route[0]]
+                            time += n2n_time[merge_route[-1]][0]
 
                             # time constraint 만족하는지 확인
                             if (time <= time_constraint):
@@ -206,9 +206,9 @@ def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, time_constra
                             for i in range(len(merge_route)-1):
                               # merge_route의 i번째 node -> i+1번째 node 이동 시간
                               time += n2n_time[merge_route[i]][merge_route[i+1]]
-                              # depot -> 0번째 노드 + 마지막 노드 -> depot 시간 합하기
-                              time += n2n_time[0][merge_route[0]]
-                              time += n2n_time[merge_route[-1]][0]
+                            # depot -> 0번째 노드 + 마지막 노드 -> depot 시간 합하기
+                            time += n2n_time[0][merge_route[0]]
+                            time += n2n_time[merge_route[-1]][0]
 
                             # time constraint 만족하는지 확인
                             if (time <= time_constraint):
