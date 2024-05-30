@@ -1,6 +1,6 @@
 import numpy as np
 
-def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, time_constraint, n2n_time, service_time, stochastic_drop=0.0):
+def Clarke_Wright_Savings(route_list, saving_dict, node_list, capa, depot_node, time_constraint, n2n_time, service_time, stochastic_drop=0.0):
     """
     saving_dict: 정렬된 saving의 dictionary 객체
     demand_list: 각 node들의 demand list를 나열 -> depot을 제외한 demand list 만들기
@@ -16,17 +16,8 @@ def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, time_constra
         else:
             demand_list.append(node.demand)
 
-    # time_constraint 설정 -> 추후, function parameter로 넣어주면 됨!
-    # time은 계산하기 편하게 우선 min으로 해 줌, 나머지 시간들도 min 기준이라 생각하면 될 듯
-
-    # node-node 이동 시간 : 2차원 리스트
-    # 디폿(물류창고)+노드(네프론)의 개수가 54이라고 가정 -> elem이 모두 0인 54x54 2차원 리스트 생성
-
-    # node의 service time : 1차원 리스트
-    # 노드(네프론)의 개수가 53이라고 가정 -> elem이 모두 0인 리스트 생성
     service_time = [service_time for i in range(len(demand_list))]
 
-    route_list = []
     node_state_list = [[0, 0, 0] for i in range(len(demand_list))]
     for link in saving_dict:
         if (np.random.binomial(n=1, p=stochastic_drop, size=1)[0] == 1):

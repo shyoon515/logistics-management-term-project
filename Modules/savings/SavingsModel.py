@@ -1,7 +1,6 @@
 from itertools import combinations
 import more_itertools
 from .route import Route
-from .SavingsAlgorithm import Clarke_Wright_Savings
 
 class SavingsModel:
     def __init__(self, graph, depot_index):
@@ -35,7 +34,7 @@ class SavingsModel:
         self.savings = result
         
 
-    def apply_algorithm(self, capa, algorithm, max_time, service_time, stochastic_drop=0.0):
+    def apply_algorithm(self, route_list, capa, algorithm, max_time, service_time, stochastic_drop=0.0):
         """
         self.routes에 알고리즘을 통해 구해진 route 해를 저장
         """
@@ -58,7 +57,7 @@ class SavingsModel:
                 temp.append(self.graph.get_link(n1, n2).time)
             n2n_time.append(temp)
 
-        all_routes = algorithm(self.savings, self.graph.nodes, capa, self.depot, max_time, n2n_time, service_time, stochastic_drop=stochastic_drop)
+        all_routes = algorithm(route_list, self.savings, self.graph.nodes, capa, self.depot, max_time, n2n_time, service_time, stochastic_drop=stochastic_drop)
         
         for r in all_routes:
             self.routes.append(Route(self.graph, r))
