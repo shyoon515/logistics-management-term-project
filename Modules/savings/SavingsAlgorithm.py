@@ -15,15 +15,7 @@ def Clarke_Wright_Savings(saving_dict, node_list, capa, depot_node, time_constra
             continue
         else:
             demand_list.append(node.demand)
-
-    # time_constraint 설정 -> 추후, function parameter로 넣어주면 됨!
-    # time은 계산하기 편하게 우선 min으로 해 줌, 나머지 시간들도 min 기준이라 생각하면 될 듯
-
-    # node-node 이동 시간 : 2차원 리스트
-    # 디폿(물류창고)+노드(네프론)의 개수가 54이라고 가정 -> elem이 모두 0인 54x54 2차원 리스트 생성
-
-    # node의 service time : 1차원 리스트
-    # 노드(네프론)의 개수가 53이라고 가정 -> elem이 모두 0인 리스트 생성
+      
     service_time = [service_time for i in range(len(demand_list))]
 
     route_list = []
